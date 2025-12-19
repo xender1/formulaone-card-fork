@@ -156,15 +156,15 @@ class ActionHandler extends HTMLElement implements ActionHandler {
 }
 
 // TODO You need to replace all instances of "action-handler-boilerplate" with "action-handler-<your card name>"
-customElements.define('action-handler-formulaonecard', ActionHandler);
+customElements.define('action-handler-formulaonecard-fork', ActionHandler);
 
 const getActionHandler = (): ActionHandler => {
   const body = document.body;
-  if (body.querySelector('action-handler-formulaonecard')) {
-    return body.querySelector('action-handler-formulaonecard') as ActionHandler;
+  if (body.querySelector('action-handler-formulaonecard-fork')) {
+    return body.querySelector('action-handler-formulaonecard-fork') as ActionHandler;
   }
 
-  const actionhandler = document.createElement('action-handler-formulaonecard');
+  const actionhandler = document.createElement('action-handler-formulaonecard-fork');
   body.appendChild(actionhandler);
 
   return actionhandler as ActionHandler;

@@ -26,8 +26,8 @@ console.info(
 /* eslint-disable @typescript-eslint/no-explicit-any */
 (window as any).customCards = (window as any).customCards || [];
 (window as any).customCards.push({
-  type: 'formulaone-card',
-  name: 'FormulaOne card',
+  type: 'formulaone-card-fork',
+  name: 'FormulaOne card fork',
   preview: false,
   description: 'Present the data of Formula One in a pretty way',
 });

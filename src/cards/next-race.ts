@@ -45,12 +45,24 @@ export default class NextRace extends BaseCard {
                     return nextRaceDate >= new Date();
                 })[0];
 
+                let isNextSeason = false;
+
                 if(!nextRace) {
                     // No race found in current season, try next season
                     try {
                         const nextSeasonSchedule = await this.client.GetSchedule(new Date().getFullYear() + 1);
                         if(nextSeasonSchedule && nextSeasonSchedule.length > 0) {
-                            nextRace = nextSeasonSchedule[0];
+                            // Add the delay to the hours of the next race
+                            nextRace = nextSeasonSchedule.filter(race => {
+                                const nextRaceDate = new Date(race.date + 'T' + race.time);
+                                nextRaceDate.setHours(nextRaceDate.getHours() + delay);
+                                return nextRaceDate >= new Date();
+                            })[0];
+
+                            if(!nextRace) {
+                                return getEndOfSeasonMessage(this.translation('endofseason'));
+                            }
+                            isNextSeason = true;
                         } else {
                             return getEndOfSeasonMessage(this.translation('endofseason'));
                         }
@@ -59,7 +71,9 @@ export default class NextRace extends BaseCard {
                     }
                 }
 
-                return html`<table>
+                return html`
+                    ${isNextSeason ? getEndOfSeasonMessage(this.translation('endofseason')) : ''}
+                    <table>
                         <tbody>
                             <tr>
                                 <td colspan="5">${renderHeader(this, nextRace)}</td>

@@ -6,7 +6,7 @@ module.exports = {
     mode: 'production',
     entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
-        filename: 'formulaone-card.js',
+        filename: 'formulaone-card-fork.js',
         path: path.resolve(__dirname),
     },
     optimization: {

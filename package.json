@@ -1,5 +1,5 @@
 {
-  "name": "formulaone-card",
+  "name": "formulaone-card-fork",
   "version": "1.13.2",
   "description": "Frontend card for Home Assistant to display Formula One data",
   "main": "index.js",
@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcokreeft87/formulaone-card.git"
+    "url": "git+https://github.com/xender1/formulaone-card-fork.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/marcokreeft87/formulaone-card/issues"
+    "url": "https://github.com/xender1/formulaone-card-fork/issues"
   },
-  "homepage": "https://github.com/marcokreeft87/formulaone-card#readme",
+  "homepage": "https://github.com/xender1/formulaone-card-fork#readme",
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
